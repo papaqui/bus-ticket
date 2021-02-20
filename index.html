@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bus Ticket</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Bus</h1>
+    </nav>
+
+    <div class="site">
+      <h2>Asientos de salida</h2>
+
+      <div class="timer">
+        <p>Tiempo para realizar tu compra</p>
+        <span id="time-left">8:00</span>
+      </div>
+
+      <div class="container">
+        <div class="bus-container">
+          <div class="bus">
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+          </div>
+          <!-- end .bus -->
+          <div class="elements">
+            <div class="list">
+              <img src="images/seleccionado@3x.png" alt="" />
+              <small>Seleccionado</small>
+            </div>
+            <div class="list">
+              <img src="images/ocupado@3x.png" alt="" />
+              <small>Ocupado</small>
+            </div>
+            <div class="list">
+              <img src="images/libre@3x.png" alt="" />
+              <small>Disponible</small>
+            </div>
+          </div>
+          <!-- end .elements -->
+        </div>
+        <!-- end .bus-container -->
+
+        <div class="details-container">
+          <h3>Origen</h3>
+          <p class="date"></p>
+          <p class="origin"></p>
+          <h3>Destino</h3>
+          <p class="date"></p>
+          <p class="destination"></p>
+
+          <p class="passenger-type">
+            Tipo de pasajero: <span id="passenger-type"></span>
+          </p>
+
+          <p class="subtotal">
+            Viaje de salida <span id="subtotal-price"></span>
+          </p>
+          <p class="discount">Descuento <span id="discount-price"></span></p>
+          <p class="total">Total <span id="total-price"></span></p>
+          <small>Precios incluyen I.V.A.</small>
+        </div>
+      </div>
+      <!-- end .container -->
+    </div>
+    <!-- end .site -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
