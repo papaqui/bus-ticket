@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Bus Ticket</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <nav>
@@ -13,130 +18,211 @@
     </nav>
 
     <div class="site">
-      <h2>Asientos de salida</h2>
+      <!-- SELECT DESTINATION -->
+      <h2>Selecciona tu viaje</h2>
+      <section class="select-destination">
+        <div class="type-of-trip">
+          <input
+            type="radio"
+            id="single-trip"
+            name="trip"
+            value="single"
+            checked
+          />
+          <label for="single-trip">Sencillo</label>
 
-      <div class="timer">
-        <p>Tiempo para realizar tu compra</p>
-        <span id="time-left">8:00</span>
-      </div>
-
-      <div class="container">
-        <div class="bus-container">
-          <div class="bus">
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat occupied"></div>
-              <div class="seat occupied"></div>
-              <div class="seat occupied"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat occupied"></div>
-              <div class="seat"></div>
-              <div class="seat occupied"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat occupied"></div>
-              <div class="seat"></div>
-              <div class="seat occupied"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-            <div class="row">
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-              <div class="seat"></div>
-            </div>
-          </div>
-          <!-- end .bus -->
-          <div class="elements">
-            <div class="list">
-              <img src="images/seleccionado@3x.png" alt="" />
-              <small>Seleccionado</small>
-            </div>
-            <div class="list">
-              <img src="images/ocupado@3x.png" alt="" />
-              <small>Ocupado</small>
-            </div>
-            <div class="list">
-              <img src="images/libre@3x.png" alt="" />
-              <small>Disponible</small>
-            </div>
-          </div>
-          <!-- end .elements -->
+          <input type="radio" id="round-trip" name="trip" value="round" />
+          <label for="round-trip">Redondo</label>
         </div>
-        <!-- end .bus-container -->
-
-        <div class="details-container">
-          <h3>Origen</h3>
-          <p class="date"></p>
-          <p class="origin"></p>
-          <h3>Destino</h3>
-          <p class="date"></p>
-          <p class="destination"></p>
-
-          <p class="passenger-type">
-            Tipo de pasajero: <span id="passenger-type"></span>
-          </p>
-
-          <p class="subtotal">
-            Viaje de salida <span id="subtotal-price"></span>
-          </p>
-          <p class="discount">Descuento <span id="discount-price"></span></p>
-          <p class="total">Total <span id="total-price"></span></p>
-          <small>Precios incluyen I.V.A.</small>
+        <div class="origin-destination">
+          <ul>
+            <li class="origin-item">
+              <label for="origin">Origen</label>
+              <select name="" id="">
+                <option value="cdmx">Ciudad de México</option>
+                <option value="pue">Puebla</option>
+                <option value="tlax">Tlaxcala</option>
+                <option value="mor">Morelos</option>
+              </select>
+            </li>
+            <li class="origin-item">
+              <label for="destination">Destino</label>
+              <select name="" id="">
+                <option value="">Tabasco</option>
+                <option value="">Veracruz</option>
+                <option value="">Chiapas</option>
+                <option value="">Puerto Escondido</option>
+              </select>
+            </li>
+            <li class="origin-item">
+              <label for="start">Fecha de salida:</label>
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2021-02-20"
+                min="2021-01-01"
+                max="2021-12-31"
+              />
+            </li>
+            <li class="origin-item origin-hidden">
+              <label for="start">Fecha de regreso:</label>
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2021-02-20"
+                min="2021-01-01"
+                max="2021-12-31"
+              />
+            </li>
+            <li class="origin-item">
+              <label for="schedule">Horario:</label>
+              <select name="" id="">
+                <option value="">06:00 h</option>
+                <option value="">08:00 h</option>
+                <option value="">10:00 h</option>
+                <option value="">12:00 h</option>
+                <option value="">14:00 h</option>
+                <option value="">16:00 h</option>
+              </select>
+            </li>
+          </ul>
+          <div class="origin-button">
+            <button class="btn-schedule" id="booking">Seleccionar</button>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- BUS SEATS SELECTION -->
+      <section class="bus-seats" id="bus-seats-container">
+        <h2>Selecciona tu asiento</h2>
+
+        <div class="timer timer-hidden">
+          <p>Tiempo para realizar tu compra</p>
+          <span id="time-left">8:00</span>
+        </div>
+
+        <div class="container">
+          <div class="bus-container">
+            <div class="bus">
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+            </div>
+            <!-- end .bus -->
+            <div class="elements">
+              <div class="list">
+                <img src="images/seleccionado@3x.png" alt="" />
+                <small>Seleccionado</small>
+              </div>
+              <div class="list">
+                <img src="images/ocupado@3x.png" alt="" />
+                <small>Ocupado</small>
+              </div>
+              <div class="list">
+                <img src="images/libre@3x.png" alt="" />
+                <small>Disponible</small>
+              </div>
+            </div>
+            <!-- end .elements -->
+          </div>
+          <!-- end .bus-container -->
+
+          <div class="details-container">
+            <h3>Origen</h3>
+            <p class="date"></p>
+            <p class="origin"></p>
+            <h3>Destino</h3>
+            <p class="date"></p>
+            <p class="destination"></p>
+
+            <p class="passenger-type">
+              Tipo de pasajero: <span id="passenger-type"></span>
+            </p>
+
+            <p class="subtotal">
+              Viaje de salida <span id="subtotal-price"></span>
+            </p>
+            <p class="discount">Descuento <span id="discount-price"></span></p>
+            <p class="total">Total <span id="total-price"></span></p>
+            <small>Precios incluyen I.V.A.</small>
+          </div>
+        </div>
+        <button id="cancel-timer">Cancel timer</button>
+      </section>
       <!-- end .container -->
     </div>
+
     <!-- end .site -->
 
     <script src="script.js"></script>

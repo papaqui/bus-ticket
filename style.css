@@ -19,23 +19,123 @@ h1 {
 }
 h2 {
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.8);
 }
-
+button {
+  background-color: #71c341;
+  border: 2px solid #71c341;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:focus {
+  outline: none;
+  box-shadow: 2px 2px 10px rgba(113, 195, 65, 0.8);
+}
+button:hover {
+  box-shadow: 2px 2px 10px rgba(113, 195, 65, 0.8);
+}
+/* -------------
+NAV
+------------- */
 nav {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   padding: 0.5rem 3rem;
   z-index: 2;
-  position: relative;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-
+/* -------------
+SITE
+------------- */
 .site {
   background-color: #f7f9fa;
   min-height: 100vh;
   width: 100%;
   padding: 3rem;
+  margin-top: 5rem;
+}
+/* -------------
+SELECT DESTINATION
+------------- */
+.select-destination {
+  padding: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.type-of-trip {
+  margin-bottom: 1rem;
+}
+
+.origin-destination ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.origin-item {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.origin-item:last-child {
+  border: 1px solid transparent;
+}
+
+.origin-destination label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.origin-destination select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0);
+  transition: all 0.3s;
+}
+.origin-destination select:focus {
+  outline: none;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+input[type='date'] {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.47rem;
+}
+.origin-hidden {
+  display: none;
+}
+.show-flex {
+  display: flex;
+}
+
+/* -------------
+BUS SEATS SELECTION
+------------- */
+.bus-seats {
+  display: none;
+}
+.show {
+  display: block;
 }
 
 .timer {
@@ -46,6 +146,9 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+.timer-hidden {
+  display: none;
+}
 .timer span {
   font-weight: 700;
 }
@@ -53,6 +156,7 @@ nav {
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   width: 1140px;
   margin: 0 auto;
 }
@@ -107,4 +211,15 @@ nav {
 .details-container {
   width: 30%;
   padding: 0 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  /* .container {
+    flex-direction: column;
+    width: 95%;
+  }
+  .bus-container,
+  .details-container {
+    width: 100%;
+  } */
 }

@@ -1,0 +1,8 @@
+[] Build interface .css
+[] Make responsive
+[] Select origin and destination from option fields. Create dummy with four options
+[] Make seat clickable toogle
+[] Should it allow only one passenger?
+[] When selecting a seat, timers sets, when unselecting seat, timer stops and reset
+[] If timer runs out, popup with opacity with button to reset app
+[] When select seat, box appears to select type of passenger
