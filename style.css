@@ -64,6 +64,12 @@ SITE
   padding: 3rem;
   margin-top: 5rem;
 }
+.anchor {
+  display: block;
+  height: 110px; /*same height as header*/
+  margin-top: -110px; /*same height as header*/
+  visibility: hidden;
+}
 /* -------------
 SELECT DESTINATION
 ------------- */
@@ -132,7 +138,7 @@ input[type='date'] {
 BUS SEATS SELECTION
 ------------- */
 .bus-seats {
-  display: none;
+  /* display: none; */
 }
 .show {
   display: block;
@@ -207,10 +213,37 @@ BUS SEATS SELECTION
   align-items: center;
   margin: 0 1rem;
 }
-
+/* -------------
+DETAILS OF YOUR TRIP
+------------- */
 .details-container {
   width: 30%;
   padding: 0 2rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.details-container h3 {
+  font-weight: 300;
+}
+.details-item {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.date,
+.hour {
+  font-size: 1.4rem;
+}
+.city {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+/* -------------
+BLANK SPACE, ERASE WHEN READY
+------------- */
+.something {
+  margin-top: 3rem;
+  height: 500px;
+  background: #fff;
 }
 
 @media screen and (max-width: 1000px) {

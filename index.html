@@ -38,27 +38,27 @@
           <ul>
             <li class="origin-item">
               <label for="origin">Origen</label>
-              <select name="" id="">
-                <option value="cdmx">Ciudad de México</option>
-                <option value="pue">Puebla</option>
-                <option value="tlax">Tlaxcala</option>
-                <option value="mor">Morelos</option>
+              <select name="origin" id="origin">
+                <option value="Ciudad de México">Ciudad de México</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Morelos">Morelos</option>
               </select>
             </li>
             <li class="origin-item">
               <label for="destination">Destino</label>
-              <select name="" id="">
-                <option value="">Tabasco</option>
-                <option value="">Veracruz</option>
-                <option value="">Chiapas</option>
-                <option value="">Puerto Escondido</option>
+              <select name="destination" id="destination">
+                <option value="Tabasco">Tabasco</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Puerto Escondido">Puerto Escondido</option>
               </select>
             </li>
             <li class="origin-item">
               <label for="start">Fecha de salida:</label>
               <input
                 type="date"
-                id="start"
+                id="trip-start"
                 name="trip-start"
                 value="2021-02-20"
                 min="2021-01-01"
@@ -69,7 +69,7 @@
               <label for="start">Fecha de regreso:</label>
               <input
                 type="date"
-                id="start"
+                id="trip-destination"
                 name="trip-start"
                 value="2021-02-20"
                 min="2021-01-01"
@@ -77,14 +77,14 @@
               />
             </li>
             <li class="origin-item">
-              <label for="schedule">Horario:</label>
-              <select name="" id="">
-                <option value="">06:00 h</option>
-                <option value="">08:00 h</option>
-                <option value="">10:00 h</option>
-                <option value="">12:00 h</option>
-                <option value="">14:00 h</option>
-                <option value="">16:00 h</option>
+              <label for="schedule-origin">Horario:</label>
+              <select name="schedule-origin" id="schedule-origin">
+                <option value="06:00 h">06:00 h</option>
+                <option value="08:00 h">08:00 h</option>
+                <option value="10:00 h">10:00 h</option>
+                <option value="12:00 h">12:00 h</option>
+                <option value="14:00 h">14:00 h</option>
+                <option value="16:00 h">16:00 h</option>
               </select>
             </li>
           </ul>
@@ -96,6 +96,7 @@
 
       <!-- BUS SEATS SELECTION -->
       <section class="bus-seats" id="bus-seats-container">
+        <span class="anchor" id="bus-select"></span>
         <h2>Selecciona tu asiento</h2>
 
         <div class="timer timer-hidden">
@@ -198,14 +199,20 @@
           </div>
           <!-- end .bus-container -->
 
+          <!-- DETAILS OF YOUR TRIP -->
           <div class="details-container">
-            <h3>Origen</h3>
-            <p class="date"></p>
-            <p class="origin"></p>
-            <h3>Destino</h3>
-            <p class="date"></p>
-            <p class="destination"></p>
-
+            <div class="details-item">
+              <h3>Origen:</h3>
+              <p class="date" id="date-origin"></p>
+              <p class="hour" id="hour-origin"></p>
+              <p class="city" id="city-origin"></p>
+            </div>
+            <div class="details-item">
+              <h3>Destino:</h3>
+              <p class="date" id="date-destination"></p>
+              <p class="hour" id="hour-destination"></p>
+              <p class="city" id="city-destination"></p>
+            </div>
             <p class="passenger-type">
               Tipo de pasajero: <span id="passenger-type"></span>
             </p>
@@ -218,10 +225,13 @@
             <small>Precios incluyen I.V.A.</small>
           </div>
         </div>
-        <button id="cancel-timer">Cancel timer</button>
       </section>
-      <!-- end .container -->
+      <!-- end section.container -->
+      <section class="something">
+        <h2>Something to fill</h2>
+      </section>
     </div>
+    <!-- end div.site -->
 
     <!-- end .site -->
 
