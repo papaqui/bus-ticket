@@ -10,6 +10,8 @@ const bookingBtn = document.getElementById('booking');
 const busSeats = document.getElementById('bus-seats-container');
 const seat = document.querySelectorAll('.seat');
 const bus = document.querySelector('.bus');
+const timerBar = document.querySelector('.timer');
+const timeLeft = document.getElementById('time-left');
 
 // Schedule for trip
 const tripStartCity = document.getElementById('origin').value;
@@ -24,9 +26,8 @@ const hourOrigin = document.getElementById('hour-origin');
 const cityDestination = document.getElementById('city-destination');
 const dateDestination = document.getElementById('date-destination');
 const hourDestination = document.getElementById('hour-destination');
-// const cancelTimer = document.getElementById('cancel-timer');
-console.log(tripStartHour);
-var timer;
+
+var display;
 
 // Single or round trip
 typeOfTripRound.addEventListener('click', () => {
@@ -58,9 +59,33 @@ bookingBtn.addEventListener('click', () => {
   hourDestination.innerText = tripDestinationHour;
 });
 
-// function sendTacos() {
-//   alert('QUIERO CARNE!');
-// }
+// Countdown
+function startTimer(duration, display) {
+  var timer = duration,
+    minutes,
+    seconds;
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    display.textContent = minutes + ':' + seconds;
+
+    if (--timer < 0) {
+      timer = duration;
+    }
+    if (minutes == 0 && seconds == 0) {
+      console.log('cero!');
+    }
+  }, 1000);
+}
+function countDown() {
+  var tenMinutes = 5;
+  display = timeLeft;
+  startTimer(tenMinutes, display);
+}
 
 // Select a seat
 bus.addEventListener('click', (e) => {
@@ -69,12 +94,9 @@ bus.addEventListener('click', (e) => {
     !e.target.classList.contains('occupied')
   ) {
     e.target.classList.toggle('selected');
-    // timer = setTimeout(sendTacos, 3000);
+    timerBar.classList.remove('timer-hidden');
   }
 });
 
-// function cancelTimeout() {
-//   clearTimeout(timer);
-// }
-
-// cancelTimer.addEventListener('click', cancelTimeout);
+// Activate countdown
+bus.addEventListener('click', countDown, { once: true });

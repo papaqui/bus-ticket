@@ -2,6 +2,8 @@
 
 :root {
   --seat-size: 35px;
+  --light-gray: rgba(0, 0, 0, 0.3);
+  --med-gray: rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -138,7 +140,7 @@ input[type='date'] {
 BUS SEATS SELECTION
 ------------- */
 .bus-seats {
-  /* display: none; */
+  display: none;
 }
 .show {
   display: block;
@@ -219,7 +221,7 @@ DETAILS OF YOUR TRIP
 .details-container {
   width: 30%;
   padding: 0 2rem;
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--med-gray);
 }
 .details-container h3 {
   font-weight: 300;
@@ -233,7 +235,35 @@ DETAILS OF YOUR TRIP
   font-size: 1.4rem;
 }
 .city {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--light-gray);
+  font-weight: 700;
+}
+
+.passenger-type,
+.discount {
+  color: var(--light-gray);
+  border-top: 2px solid var(--light-gray);
+  border-bottom: 2px solid var(--light-gray);
+  padding: 1.5rem 0;
+  font-weight: 700;
+}
+
+.viaje-salida,
+.subtotal {
+  font-weight: 700;
+  color: var(--light-gray);
+  padding: 1.5rem 0;
+}
+.total {
+  padding: 1.5rem 0;
+  color: var(--med-gray);
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+small {
+  color: var(--light-gray);
+
   font-weight: 700;
 }
 
